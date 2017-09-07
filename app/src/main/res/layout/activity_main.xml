@@ -4,10 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <variable
-            name="result"
-            type="com.example.cleancalc.Result"/>
+        <variable name="result" type="com.example.cleancalc.Result"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
