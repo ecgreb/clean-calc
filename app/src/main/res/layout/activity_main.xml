@@ -4,7 +4,13 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="result" type="com.example.cleancalc.Result"/>
+        <variable
+            name="result"
+            type="com.example.cleancalc.Result"/>
+
+        <variable
+            name="presenter"
+            type="com.example.cleancalc.MainPresenter"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -42,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:inputType="numberSigned"
+                android:onTextChanged="@{presenter.onInput1TextChanged}"
                 app:layout_constraintBottom_toTopOf="@+id/input_text_2"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -54,6 +61,7 @@
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
                 android:inputType="numberSigned"
+                android:onTextChanged="@{presenter.onInput2TextChanged}"
                 app:layout_constraintBottom_toTopOf="@+id/result_text"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

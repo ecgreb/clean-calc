@@ -21,11 +21,7 @@ class MainActivity : AppCompatActivity(), MainController {
         setSupportActionBar(toolbar)
 
         val presenter = MainPresenter(this)
-        add_button.setOnClickListener {
-            presenter.onAddButtonClick(
-                    input_text_1.text.toString(),
-                    input_text_2.text.toString())
-        }
+        binding.presenter = presenter
     }
 
     override fun bindData(result: Result) {
