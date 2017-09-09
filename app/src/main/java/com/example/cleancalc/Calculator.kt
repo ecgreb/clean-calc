@@ -1,6 +1,6 @@
 package com.example.cleancalc
 
-class Calculator(var result: Result) {
+class Calculator(private var result: Result) {
     var addend1: Int = 0
         set(value) {
             field = value
@@ -15,11 +15,7 @@ class Calculator(var result: Result) {
 
     private fun add() {
         result.value.set(addend1 + addend2)
-    }
-
-    fun getResultCategory(result: Int): Category {
-        return if (result < 0) Category.LOW else
-            Category.HIGH
+        result.category = if (result.value.get() < 0) Category.LOW else Category.HIGH
     }
 }
 

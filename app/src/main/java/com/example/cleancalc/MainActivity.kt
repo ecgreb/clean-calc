@@ -4,10 +4,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.cleancalc.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.add_button
 import kotlinx.android.synthetic.main.activity_main.toolbar
-import kotlinx.android.synthetic.main.content_main.input_text_1
-import kotlinx.android.synthetic.main.content_main.input_text_2
 import kotlinx.android.synthetic.main.content_main.result_text
 
 class MainActivity : AppCompatActivity(), MainController {
