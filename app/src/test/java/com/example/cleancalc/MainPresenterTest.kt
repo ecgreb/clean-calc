@@ -8,36 +8,40 @@ class MainPresenterTest {
     private val presenter = MainPresenter(controller)
 
     @Test
-    fun onAddButtonClick_shouldSetResultTextPositive() {
-        presenter.onAddButtonClick("3", "4")
-        assertThat(controller.text).isEqualTo("7")
+    fun onTextChanged_shouldSetResultTextPositive() {
+        presenter.onInput1TextChanged("3", 0, 0, 0)
+        presenter.onInput2TextChanged("4", 0, 0, 0)
+        assertThat(controller.result?.value?.get()).isEqualTo(7)
     }
 
     @Test
-    fun onAddButtonClick_shouldSetResultTextNegative() {
-        presenter.onAddButtonClick("2", "-3")
-        assertThat(controller.text).isEqualTo("-1")
+    fun onTextChanged_shouldSetResultTextNegative() {
+        presenter.onInput1TextChanged("2", 0, 0, 0)
+        presenter.onInput2TextChanged("-3", 0, 0, 0)
+        assertThat(controller.result?.value?.get()).isEqualTo(-1)
     }
 
     @Test
-    fun onAddButtonClick_shouldSetResultColorPositive() {
-        presenter.onAddButtonClick("3", "4")
+    fun onTextChanged_shouldSetResultColorPositive() {
+        presenter.onInput1TextChanged("3", 0, 0, 0)
+        presenter.onInput2TextChanged("4", 0, 0, 0)
         assertThat(controller.color).isEqualTo(Color.GREEN)
     }
 
     @Test
-    fun onAddButtonClick_shouldSetResultColorNegative() {
-        presenter.onAddButtonClick("2", "-3")
+    fun onTextChanged_shouldSetResultColorNegative() {
+        presenter.onInput1TextChanged("2", 0, 0, 0)
+        presenter.onInput2TextChanged("-3", 0, 0, 0)
         assertThat(controller.color).isEqualTo(Color.RED)
     }
 }
 
 class TestMainController : MainController {
-    var text: String? = null
+    var result: Result? = null
     var color: Color? = null
 
-    override fun setResultText(text: String) {
-        this.text = text
+    override fun bindData(result: Result) {
+        this.result = result
     }
 
     override fun setResultColor(color: Color) {
