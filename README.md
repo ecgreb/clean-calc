@@ -23,3 +23,7 @@ Positive values are color coded in green.
 Negative values are color coded in red.
 
 <img src="files/screenshot-2.png" width="240">
+
+## Requirements
+* Android Studio 3.0
+* API 26
